@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<style type="text/css">
+		* {
+            margin: 0;
+            padding: 0;
+        }
+        
+        li {
+            list-style-type: none;
+        }
+        
+        .tab {
+            width: 978px;
+            margin: 100px auto;
+        }
+        
+        .tab-list {
+            height: 39px;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+        }
+		.tab-list li{
+			float: left;
+			height: 39px;
+			line-height: 39px;
+			padding: 0 20px;
+			text-align: center;
+			cursor: pointer;
+		}
+
+		.tab-list .current{
+			background-color: #c81623;
+			color: #fff;
+		}
+
+		.item-info{
+			padding: 20px 00 20px;
+		}
+
+		.item{
+			display: none;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class="tab">
+		<div class="tab-list">
+			<ul>
+				<li class="current">商品介绍</li>
+				<li>商品介绍</li>
+				<li>商品介绍</li>
+				<li>商品介绍</li>
+				<li>商品介绍</li>
+			</ul>
+		</div>
+		<div class="tab-con">
+			<div class="item" style="display: block;">
+				商品介绍模块内容
+			</div>
+			<div class="item">
+				规格介绍模块内容
+			</div>
+			<div class="item">
+				价格介绍模块内容
+			</div>
+			<div class="item">
+				售后介绍模块内容
+			</div>
+			<div class="item">
+				商品介绍模块内容
+			</div>
+		</div>
+	</div>
+
+
+		<script type="text/javascript">
+			$(function() {
+				//点击上部的li，当前li添加current类，其余兄弟移除类
+				$(".tab-list li").click(function(){
+					$(this).addClass("current").siblings().removeClass("current");
+					//点击的同时，得到当前li的索引号
+					var index = $(this).index();
+					console.log(index);
+					//让下部里面相应索引号的item显示，其余item隐藏
+					$(".tab-con .item").eq(index).show().siblings().hide();
+				});
+			})
+		</script>
+</body>
+</html>

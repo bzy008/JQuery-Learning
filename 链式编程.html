@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery.min.js"></script>
+</head>
+<body>
+	<button>快速</button>
+	<button>快速</button>
+	<button>快速</button>
+	<button>快速</button>
+	<button>快速</button>
+	<script type="text/javascript">
+		$(function() {
+			$("button").click(function() {
+				//我变红色，我的兄弟不变色
+				// $(this).css("color", "red").siblings().css("color", "")；
+				// 我的兄弟变红色，我不变身
+				$(this).siblings().css("color", "red")
+			})
+		})
+	</script>
+</body>
+</html>

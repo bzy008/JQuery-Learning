@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery.min.js"></script>
+</head>
+<body>
+	<video src=""></video>
+
+	<script type="text/javascript">
+		// 1.DOM对象转换为jquery对象
+		// 直接获取视频，得到就是jquery对象
+		// $('video');
+
+		// 我们已经使用原生js获取过来DOM对象
+		var myvideo = document.querySelector('video');
+		$(myvideo); //jquery里面没有play这个方法
+
+		// 2.jquery对象转换为DOM对象
+		// myvideo.play();
+		$('video')[0].play()
+		$('video').get(0).play()
+	</script>
+</body>
+</html>

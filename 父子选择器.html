@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery.min.js"></script>
+</head>
+<body>
+	<div class="nav">
+		<p>我是P</p>
+		<div>
+			<p>我是p</p>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(function() {
+			//父 parent() 返回的是 最近一级的父级元素
+			console.log($(".son").parent());
+			//子
+			//1.children() 类似子代选择器 ul>li
+			//$(".nav").children("p").css("color", "red");
+			//2.可以选里面所有的孩子 包括儿子和孙子 find()类似于后代选择器
+			$(".nav").find("p").css("color", "red");
+			
+		})
+	</script>
+</body>
+</html>
